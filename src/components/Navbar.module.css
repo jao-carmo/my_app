@@ -1,0 +1,92 @@
+/* Navbar.module.css */
+.header {
+  color: white;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: x-large;
+  background-color: #b22222;
+  padding: 0 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  height: 120px;
+  padding: 25px;
+  border-radius: 100%;
+}
+
+.Navbar {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.Navbar button {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+.Navbar button:hover {
+  background-color: #ffcc00;
+  color: #121212;
+  transform: scale(1.1);
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .Navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background-color: #b22222;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .Navbar.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+.Navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 8px 15px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+.Navbar a:hover {
+  background-color: #ffcc00;
+  color: #121212;
+  transform: scale(1.1);
+}
+
+.Navbar a:visited {
+  color: white;
+}
