@@ -8,8 +8,8 @@ const Login = () => {
                 <h2 className={styles.title}>Login</h2>
                 <form className={styles.form}>
                     <input
-                        type="text"
-                        placeholder="Usuário"
+                        type="email"
+                        placeholder="E-mail"
                         className={styles.input}
                     />
                     <input
