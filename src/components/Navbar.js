@@ -15,12 +15,12 @@ const Navbar = () => {
       <img src={logo} className={styles['logo']} alt="logo" />
       <nav className={`${styles.Navbar} ${menuOpen ? styles.show : ""}`}>
         <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
-        <NavLink to="/login" onClick={() => setMenuOpen(false)}>Login</NavLink>
-        <NavLink to="/register" onClick={() => setMenuOpen(false)}>Cadastrar</NavLink>
-        <NavLink to="/#cardapio" onClick={() => setMenuOpen(false)}>Cardápio</NavLink>
-        <NavLink to="/#parceiros" onClick={() => setMenuOpen(false)}>Parceiros</NavLink>
+        <NavLink to="/cardapio" onClick={() => setMenuOpen(false)}>Cardápio</NavLink>
+        <NavLink to="/parceiros" onClick={() => setMenuOpen(false)}>Parceiros</NavLink>
         <NavLink to="/about" onClick={() => setMenuOpen(false)}>Sobre</NavLink>
         <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contato</NavLink>
+        <NavLink className={styles['login']} to="/login" onClick={() => setMenuOpen(false)}>Login</NavLink>
+        <NavLink className={styles['login']} to="/register" onClick={() => setMenuOpen(false)}>Cadastra-se</NavLink>
       </nav>
       <div className={styles['menu-icon']} onClick={toggleMenu}>
         &#9776;

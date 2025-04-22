@@ -1,7 +1,7 @@
 /* Navbar.module.css */
 .header {
   color: white;
-  height: 100px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,6 +15,10 @@
   height: 120px;
   padding: 25px;
   border-radius: 100%;
+}
+
+.login {
+  background-color: #ffcc00;
 }
 
 .Navbar {
