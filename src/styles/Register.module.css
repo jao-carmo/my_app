@@ -1,3 +1,72 @@
-register {
+.div_register {
+    padding: 10px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
+  }
+  
+  form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  label span {
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    font-size: 1em;
+  }
+  
+  input {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 10px 5px;
+    font-size: 1em;
+    background-color: transparent;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    outline: none;
+    border-bottom: 2px solid #1a8918;
+  }
+  
+  .btnCadastrar {
+    background-color: #1a8918;
+    color: #fff;
     text-align: center;
-}
+    cursor: pointer;
+    border-radius: 8px;
+    width: 140px;
+    font-weight: bold;
+    border: none;
+    padding: 12px 18px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btnCadastrar:hover {
+    background-color: #0f730c;
+  }
+  
+  .error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-top: 15px;
+  }
+  

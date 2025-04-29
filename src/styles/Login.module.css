@@ -1,58 +1,59 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    background: #f3f4f6;
-}
-
-.loginBox {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    padding: 60px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
+  }
+  
+  .title {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
     text-align: center;
-}
-
-.title {
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-    color: #111827;
-}
-
-.form {
+  }
+  
+  .form {
+    max-width: 500px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    max-width: 80%;
-    margin: 0 auto;
-}
-
-.input {
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-.input:focus {
-    border-color: #3b82f6;
-}
-
-.button {
-    background: #3b82f6;
-    color: white;
+    gap: 20px;
+  }
+  
+  .input {
+    box-sizing: border-box;
     border: none;
-    padding: 0.75rem;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-bottom: 2px solid #ccc;
+    padding: 10px 5px;
+    font-size: 1em;
+    background-color: transparent;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-bottom: 2px solid #1a8918;
+  }
+  
+  .button {
+    background-color: #1a8918;
+    color: #fff;
+    text-align: center;
     cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.button:hover {
-    background: #2563eb;
-}
+    border-radius: 8px;
+    width: 140px;
+    font-weight: bold;
+    border: none;
+    padding: 12px 18px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    align-self: center;
+  }
+  
+  .button:hover {
+    background-color: #0f730c;
+  }
+  
