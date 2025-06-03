@@ -16,7 +16,7 @@ const Navbar = () => {
       <nav className={`${styles.Navbar} ${menuOpen ? styles.show : ""}`}>
         <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
         <NavLink to="/cardapio" onClick={() => setMenuOpen(false)}>Cardápio</NavLink>
-        <NavLink to="/parceiros" onClick={() => setMenuOpen(false)}>Parceiros</NavLink>
+        <NavLink to="/store" onClick={() => setMenuOpen(false)}>Lojas</NavLink>
         <NavLink to="/about" onClick={() => setMenuOpen(false)}>Sobre</NavLink>
         <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contato</NavLink>
         <NavLink className={styles['login']} to="/login" onClick={() => setMenuOpen(false)}>Login</NavLink>
