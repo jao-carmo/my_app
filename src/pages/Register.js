@@ -28,7 +28,7 @@ const handleSubmit = async (e) => {
         setError("As senhas precisam ser iguais!")
         return
     }
-    const res = await createUser(user);
+    await createUser(user);
 }
   useEffect(() =>{
     if(authError){

@@ -6,61 +6,84 @@ import {
     signOut
 } from "firebase/auth";
 import { useState, useEffect } from 'react';
-import { db } from '../firebase/connection';
- 
+import { useNavigate } from "react-router-dom";
+
 export const useAuthentication = () => {
+    const navigate = useNavigate();
     const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(null);
+    const [loading, setLoading] = useState(false);
     const [cancelled, setCancelled] = useState(false);
-    const auth = getAuth()
- 
+    const auth = getAuth();
+
     function checkIfIsCancelled() {
-        if (cancelled) {
-            return;
-        }
+        if (cancelled) throw new Error("Operação cancelada");
     }
-    //método para criar o usuário
+
+    // Criar usuário
     const createUser = async (data) => {
-        checkIfIsCancelled();
-        setLoading(true);
-        setError(null);
- 
         try {
-            const {user} = await createUserWithEmailAndPassword(
+            setLoading(true);
+            setError(null);
+
+            const { user } = await createUserWithEmailAndPassword(
                 auth, data.displayEmail, data.displayPassword
-            )
- 
+            );
+
             await updateProfile(user, {
                 displayName: data.displayName
-            })
-            return user
-        }
-        catch (error) {
+            });
+
+            return user;
+        } catch (error) {
             let systemErrorMessage;
-            if (error.message.includes("Password")){
+            console.log(error);
+            if (error.message.includes("Password")) {
                 systemErrorMessage = "A senha precisa conter pelo menos 6 caracteres";
-            }
-            else if(error.message.includes("email-already")){
+            } else if (error.message.includes("email-already")) {
                 systemErrorMessage = "E-mail já cadastrado";
-            }
-            else {
+            } else {
                 systemErrorMessage = "Ocorreu um erro - Tente Novamente";
             }
+
             setError(systemErrorMessage);
-        }finally{
-        setLoading(false);
+        } finally {
+            setLoading(false);
+            navigate("/login");
+        }
+    };
+
+    // Login
+    const login = async (email, senha) => {
+        setLoading(true);
+        try {
+            let user;
+            await signInWithEmailAndPassword(auth, email, senha)
+                .then((userCredential) => {
+                    user =  userCredential;
+                })
+                .catch((error) => {
+                    setError("Erro ao fazer login. Verifique suas credenciais.");
+                });
+                return user;
+        } catch (error) {
+            setError(error); // Use o erro correto aqui
+            console.log(error);
+        }
+        finally {
+            setLoading(false);
+        }
     }
-    }
-    
- 
-    useEffect (() => {
-        return()  => setCancelled(true);
-      },[]);
- 
-      return {
+
+
+    useEffect(() => {
+        return () => setCancelled(true);
+    }, []);
+
+    return {
         auth,
         createUser,
+        login,
         error,
-        loading,
-      }
-}
+        loading
+    };
+};
